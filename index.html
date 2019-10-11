@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" href=images/favicon.ico type=image/x-icon>
+    <meta charset="UTF-8">
+    <title>百度</title>
+    <script src="main.js"></script>
+</head>
+<body>
+<div id="container">
+    <img id="logo"/>
+    <div id="search_box">
+
+        <input onkeypress="if(checkKey(event)===13) searchWd();" type="text" oninput="getRet();" id="search_input" onfocus="showSearchBoard(true)" onfocusout="showSearchBoard(false)">
+        <button id="search_btn"  onclick='searchWd();'  type="submit" style="">百度一下</button>
+        <div id="clear" onclick="document.getElementById('search_input').value='';getRet();"></div>
+    </div>
+    <div id="ret">
+        <ul id="ret_caontainer" ></ul>
+    </div>
+    <div id="history">
+        <ul id="history_caontainer" ></ul>
+        <div id="clear_history" onclick="searchHistory('del_all');document.getElementById('history_caontainer').innerHTML='';this.innerHTML='';document.getElementById('history').style.display='none';"><span>清空历史</span></div>
+    </div>
+</div>
+</body>
+</html>
