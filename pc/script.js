@@ -65,6 +65,7 @@ function  showSearchBoard(show)
 
 function getRet()
 {
+
     let wd = document.getElementById("search_input").value;
     if(wd !== ""){
         document.getElementById("history").style.display="none";
@@ -176,7 +177,10 @@ document.getElementsByClassName("ret")[item_id].classList.add("ret_hover");
             document.getElementById("search_input").value=document.getElementsByClassName("ret")[item_id].innerText;
         }
 }
-
+    let wd = document.getElementById("search_input").value;
+    if(wd === ""){
+        document.getElementById("ret").style.display="none";
+    }
 
 });
 
