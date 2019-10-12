@@ -76,6 +76,7 @@ function retResponse(ret){
         list[i].addEventListener("click", function (e) {
             e.preventDefault();
             searchHistory("add",this.innerText);
+            document.getElementById("search_input").value="";
             window.location = "https://www.baidu.com/s?wd="+this.innerText;
         });
     }
@@ -88,6 +89,7 @@ function searchWd()
     if(wd !== "") {
         let wd = document.getElementById("search_input").value;
         searchHistory("add",wd);
+        document.getElementById("search_input").value="";
         window.location = "https://www.baidu.com/s?wd=" + wd;
     }else
     {
@@ -121,6 +123,7 @@ function showHistory()
         list[i].addEventListener("click", function (e) {
             e.preventDefault();
             searchHistory("add",this.innerText);
+            document.getElementById("search_input").value="";
            window.location = "https://www.baidu.com/s?wd="+this.innerText;
         });
     }

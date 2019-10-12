@@ -35,6 +35,10 @@ html,body{
     border-right: none;
 
 }
+#search_box #search_input:hover
+{
+    border-color: #999 transparent #b3b3b3 #999;
+}
 .search_box_focus #search_input
 {
 
@@ -51,8 +55,16 @@ width:100px;
     color:#fff;
     float: right;
     outline: none;
-
+    cursor: pointer;
 }
+#search_box #search_btn:hover
+{
+    background: #317ef3;
+    border-bottom: 1px solid #2868c8;
+    box-shadow: 1px 1px 1px #ccc;
+}
+
+
 #ret, #ret li,#ret ul
  {
      list-style: none;
