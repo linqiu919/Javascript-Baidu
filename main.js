@@ -1,4 +1,3 @@
-//Github mcmyth
 var head = document.head || document.getElementsByTagName('head')[0];
 let device = /Android|webOS|iPhone|iPod|BlackBerry|iPad/i;
 if(device.test(navigator.userAgent)) {

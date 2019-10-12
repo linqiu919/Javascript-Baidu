@@ -11,7 +11,6 @@
 <div id="container">
     <img draggable="false" id="logo"/>
     <div id="search_box">
-
         <input onkeypress="if(checkKey(event)===13) searchWd();" type="text" oninput="getRet();" id="search_input" onfocus="showSearchBoard(true)" onfocusout="showSearchBoard(false)">
         <button id="search_btn"  onclick='searchWd();'  type="submit" style="">百度一下</button>
         <div id="clear" onclick="document.getElementById('search_input').value='';getRet();"></div>

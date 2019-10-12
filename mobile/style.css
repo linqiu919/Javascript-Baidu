@@ -1,11 +1,9 @@
 #container
 {
-    width: 100%;
-    margin: 0 auto;
+    width:80%;
+    margin:0 auto;
     text-align: center;
     margin-top: 80px;
-    padding: 0 16px;
-    box-sizing: border-box;
 }
 #logo{
     max-width: 217px;
@@ -22,18 +20,13 @@
 }
 #search_input
 {
-    width: calc(100% - 100px);
+    width: calc(100% - 140px);
     float: left;
     height: calc(100% - 1px);
     border: none;
     padding: 2px 10px;
     outline:none;
     padding-right: 0;
-
-}
-
-.search_box_focus #search_input {
-    width: calc(100% - 140px);
 
 }
 #search_btn
@@ -51,10 +44,6 @@
     min-width: 74px;
     max-width: 90px;
 }
-#search_btn:active
- {
-     background-color: #e8e8e8;
- }
 
 .search_box_focus
 {
