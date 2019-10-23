@@ -23,6 +23,7 @@ html,body{
     width: 650px;
     /* overflow: hidden; */
     height: 36px;
+    font-size: 15px;
 }
 #search_box #search_input
 {
