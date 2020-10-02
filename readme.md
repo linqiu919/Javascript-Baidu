@@ -1,4 +1,4 @@
-###	纯JavaScript无广告百度首页[Demo](https://mcmyth.github.io/Javascript-Baidu/)
+###	纯JavaScript无广告百度首页 [Demo](https://mcmyth.github.io/Javascript-Baidu/)
 
 已对移动端和PC端优化和适配
 
