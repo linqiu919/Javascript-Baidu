@@ -1,5 +1,5 @@
 ###	纯JavaScript无广告百度首页
-老版本不再维护,即将迁移到新分支 [2.0](https://github.com/mcmyth/Javascript-Baidu/tree/2.0)
+老版本不再维护,即将迁移到[新分支](https://github.com/mcmyth/Javascript-Baidu/tree/2.0)
 
 [2.0 Demo](https://mcmyth.github.io/Javascript-Baidu/)
 
