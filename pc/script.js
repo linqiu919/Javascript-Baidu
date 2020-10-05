@@ -2,6 +2,7 @@ let isDel = false;
 if(performance!=undefined && performance.navigation.type==2){
   setTimeout(function (){
     HideRet()
+    ShowHistory()
   },50)
 }
 function showSearchBoard(show) {
