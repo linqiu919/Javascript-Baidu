@@ -66,7 +66,7 @@ html, body {
 }
 
 #ret {
-    width: 540px;
+    width: 539px;
     margin: 0 auto;
     display: none;
     padding-right: 111px;
@@ -78,7 +78,7 @@ html, body {
     border-width: 0 2px 2px 2px;
     border-radius: 0 0 10px 10px;
     box-sizing: border-box;
-    width: 552px;
+    width: 551px;
     /*box-shadow: 1px 1px 3px #ededed;*/
     background-color: #fff;
     /*background: url(../images/sugbg_1762fe7.png) 98% 97% no-repeat;*/
@@ -93,7 +93,7 @@ html, body {
     height: 1px;
     background-color: #F5F5F6;
     top: 0;
-    left: calc(540px / 2);
+    left: calc(539px / 2);
     transform: translateX(-50%);
 }
 
@@ -119,7 +119,7 @@ html, body {
 }
 
 #history {
-    width: 540px;
+    width: 539px;
     margin: 0 auto;
     display: none;
     padding-right: 111px;
@@ -131,7 +131,7 @@ html, body {
     border-bottom: none;
     border-width: 0 2px 2px 2px;
     box-sizing: border-box;
-    width: 552px;
+    width: 551px;
     background-color: #fff;
     background-size: 18%;
     transform: translateY(-8px);
@@ -144,7 +144,7 @@ html, body {
     height: 1px;
     background-color: #F5F5F6;
     top: 0;
-    left: calc(540px / 2);
+    left: calc(539px / 2);
     transform: translateX(-50%);
 }
 .history {
@@ -172,7 +172,7 @@ html, body {
 }
 
 #clear_history {
-    width: 552px;
+    width: 551px;
     text-align: right;
     border: 2px solid #4e6ef2;
     border-radius: 0 0 10px 10px;
