@@ -78,7 +78,7 @@ html, body {
     border-width: 0 2px 2px 2px;
     border-radius: 0 0 10px 10px;
     box-sizing: border-box;
-    width: 551px;
+    width: 552px;
     /*box-shadow: 1px 1px 3px #ededed;*/
     background-color: #fff;
     /*background: url(../images/sugbg_1762fe7.png) 98% 97% no-repeat;*/
@@ -126,30 +126,37 @@ html, body {
 }
 
 #history #history_caontainer {
-    border: 1px solid #ccc;
+    border: 2px solid #4e6ef2;
+    border-top: none;
+    border-bottom: none;
+    border-width: 0 2px 2px 2px;
     box-sizing: border-box;
-    width: 550px;
-    box-shadow: 1px 1px 3px #ededed;
+    width: 552px;
     background-color: #fff;
-    background: url(../images/sugbg_1762fe7.png) 98% 97% no-repeat;
     background-size: 18%;
-    border-bottom-color: #fff;
-    border-top-color: #fff;
+    transform: translateY(-8px);
+    position: relative;
 }
-
+#history #history_caontainer::before {
+    content: '';
+    position: absolute;
+    width: 520px;
+    height: 1px;
+    background-color: #F5F5F6;
+    top: 0;
+    left: calc(539px / 2);
+    transform: translateX(-50%);
+}
 .history {
     text-align: left;
     margin: 6px 0 !important;
-    color: #7A77C8;
+    color: #626675;
     padding: 6px 6px !important;
+    cursor: pointer;
 }
 
-.history:hover {
-    background-color: #e6e6e6;
-}
-
-.history_hover {
-    background-color: #e6e6e6;
+.history:hover,.history_hover {
+    color: #4e6ef2;
 }
 
 .history span {
@@ -165,18 +172,23 @@ html, body {
 }
 
 #clear_history {
-    width: 550px;
+    width: 552px;
     text-align: right;
-    background-color: #f7f7f7;
-    border: solid 1px #ccc;
-    padding: 3px;
+    border: 2px solid #4e6ef2;
+    border-radius: 0 0 10px 10px;
+    padding: 5px 0;
     box-sizing: border-box;
     border-top: none;
-    color: #666;
-    font-size: 12px;
+    font-size: 14px;
+    transform: translateY(-15px);
 }
 
 #clear_history span {
     cursor: pointer;
-    text-decoration: underline;
+    margin-right: 10px;
+    color: #9195A3;
+}
+
+#clear_history span:hover {
+    color: #4e6ef2;
 }

@@ -3,22 +3,20 @@ if(performance!=undefined && performance.navigation.type==2){
   setTimeout(function (){
     HideRet()
   },50)
-
 }
 function showSearchBoard(show) {
   let wd = document.getElementById("search_input").value;
   if (show) {
     document.getElementById("search_box").classList.add("search_box_focus");
     if (wd !== "") {
-      document.getElementById("history").style.display = "none";
+      HideHistory()
       ShowRet()
     } else {
       let history = searchHistory("get");
       let listHTML = "";
       // console.log(history);
       if (history !== null && history.length > 0) {
-        document.getElementById("history").style.display = "block";
-
+        ShowHistory()
         for (let i = 0; i < history.length; i++) {
           listHTML += '<li class="history">' + history[i] + '<span class="del">删除</span></li>';
           document.getElementById("history_caontainer").innerHTML = listHTML;
@@ -38,7 +36,6 @@ function showSearchBoard(show) {
             }
           });
         }
-
         list = document.getElementsByClassName("del");
         for (var i = 0; i < list.length; i++) {
           list[i].addEventListener("click", function (e) {
@@ -66,26 +63,19 @@ function getRet() {
     document.body.insertBefore(script, document.body.firstChild);
     document.body.removeChild(script);
   } else {
-    let history = searchHistory("get");
-    if (history !== null && history.length > 0) {
-      document.getElementById("history").style.display = "block";
-    }
+    ShowHistory()
   }
 }
 
 document.body.addEventListener("click", function (e) {
   if (event.target.id !== "search_input") {
-    document.getElementById("history").style.display = "none";
     HideRet()
+    HideHistory()
   }
 }, false);
 
 search_input = document.getElementById('search_input');
 search_input.addEventListener('blur', function() {
-  document.getElementById("history").style.display = "none";
-  document.getElementById("ret").style.display = "none";
-  document.getElementById("search_input").style.borderRadius = "";
-  document.getElementById("search_input").style.borderBottom = "";
 });
 
 function retResponse(ret) {
@@ -112,7 +102,6 @@ function retResponse(ret) {
   }
 }
 
-
 function getStr(str1, str2) {
   let str_before = str1.split(str2)[0];
   let str_after = str1.split(str2)[1];
@@ -128,9 +117,7 @@ function getStr(str1, str2) {
     } else {
       return str1;
     }
-
   }
-
 }
 
 function searchWd() {
@@ -142,14 +129,19 @@ function searchWd() {
 }
 
 let item_id = 0;
+document.getElementById("search_input").addEventListener("change", function (event) {
+  if (this.value === '') {
+    HideRet()
+    ShowHistory()
+  }
+})
+
 document.getElementById("search_input").addEventListener("keydown", function (event) {
-  if (this.value === '') HideRet()
   if (document.getElementById("ret_caontainer").innerHTML !== "") {
     for (let i = 0; i < document.getElementsByClassName("ret").length; i++) {
       document.getElementsByClassName("ret")[i].classList.remove("ret_hover");
     }
     if (checkKey(event) === 40) {
-
       if (item_id < document.getElementsByClassName("ret").length - 1) {
         item_id++;
       } else {
@@ -173,7 +165,10 @@ document.getElementById("search_input").addEventListener("keydown", function (ev
   if (wd === "") {
     document.getElementById("ret").style.display = "none";
   }
-
+  if (this.value === '') {
+    HideRet()
+    ShowHistory()
+  }
 });
 
 
@@ -186,13 +181,35 @@ document.getElementById("ret_caontainer").addEventListener("mouseover", function
 function ShowRet() {
   let list = document.getElementsByClassName("ret");
   if (list.length === 0) return
+  HideHistory()
   document.getElementById("ret").style.display = "block";
   document.getElementById("search_input").style.borderRadius = "10px 0 0 0";
   document.getElementById("search_input").style.borderBottom = "none";
+  document.getElementById("search_input").style.borderColor = "#4e6ef2";
 }
 
 function HideRet() {
   document.getElementById("ret").style.display = "none";
   document.getElementById("search_input").style.borderRadius = "";
+  document.getElementById("search_input").style.borderColor = "";
   document.getElementById("search_input").style.borderBottom = "";
+}
+
+function ShowHistory() {
+  let wd = document.getElementById("search_input").value;
+  if (wd === '')  HideRet()
+  let history = searchHistory("get");
+  if (history !== null && history.length > 0) {
+    document.getElementById("history").style.display = "block";
+    document.getElementById("search_input").style.borderRadius = "10px 0 0 0";
+    document.getElementById("search_input").style.borderBottom = "none";
+    document.getElementById("search_input").style.borderColor = "#4e6ef2";
+  }
+}
+
+function HideHistory() {
+  document.getElementById("history").style.display = "none";
+  document.getElementById("search_input").style.borderRadius = "";
+  document.getElementById("search_input").style.borderBottom = "";
+  document.getElementById("search_input").style.borderColor = "";
 }
